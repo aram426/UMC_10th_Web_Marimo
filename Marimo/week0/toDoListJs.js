@@ -39,17 +39,3 @@ doneList.addEventListener("click", function(event){
         li.remove();
     }
 })
-
-const savedTodos = localStorage.getItem("todos");
-if (savedTodos !== null){
-    const parsedTodos = JSON.parse(savedTodos);
-    parsedTodos.forEach(function(todo){
-        const li = document.createElement("li");
-        const span = document.createElement("span");
-        span.textContent = todo.task;
-        const completeButton = document.createElement("button");
-        completeButton.textContent = "완료";
-        li.append(span, completeButton);
-        todoList.appendChild(li);
-    });
-}
